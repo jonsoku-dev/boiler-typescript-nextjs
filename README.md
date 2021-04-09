@@ -1,16 +1,16 @@
-# Getting started
+## Getting started
 
 ```shell
 yarn add --dev eslint prettier eslint-plugin-react eslint-plugin-react-hooks eslint-config-prettier eslint-plugin-prettier eslint-plugin-jsx-a11y
 ```
 
-## .eslintrc.js .prettierrc
+### .eslintrc.js .prettierrc
 
 ```shell
 touch .eslintrc.js .prettierrc
 ```
 
-## .eslintignore and .prettierignore
+### .eslintignore and .prettierignore
 
 ```shell
 touch .eslintignore .prettierignore
@@ -22,7 +22,7 @@ Just add the follwing to both files
 node_modules
 ```
 
-## .prettierrc
+### .prettierrc
 
 ```shell
 {
@@ -35,7 +35,7 @@ node_modules
 }
 ```
 
-## .eslintrc.js
+### .eslintrc.js
 
 ```js
 module.exports = {
@@ -80,9 +80,9 @@ You need to add the script to your `package.json` file.
 },
 ```
 
-# Targeting Next.js
+## Targeting Next.js
 
-## .eslint.js 에 규칙추가
+### .eslint.js 에 규칙추가
 
 ```shell
 {
@@ -100,13 +100,13 @@ You need to add the script to your `package.json` file.
 }
 ```
 
-# Targeting TypeScript
+## Targeting TypeScript
 
 ```shell
 yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
-## Finally
+### Finally
 
 ```js
 module.exports = {
@@ -156,7 +156,7 @@ module.exports = {
 };
 ```
 
-# import sort
+## import sort
 
 ```shell
 yarn add --dev eslint-plugin-simple-import-sort
