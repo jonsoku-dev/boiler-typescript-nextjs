@@ -171,3 +171,23 @@ module.exports = {
   ]
 };
 ```
+
+## husky + lint-staged
+```shell
+yarn add --dev husky@4 lint-staged
+```
+Now in your `package.json` add the following at the top level.
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+    ]
+  }
+}
+```
