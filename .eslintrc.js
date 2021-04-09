@@ -1,5 +1,6 @@
 module.exports = {
-    root: true,                 // Make sure eslint picks up the config at the root of the directory
+    root: true,                 // Make sure eslint picks up the config at the root of the directory,
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2020,      // Use the latest ecmascript standard
         sourceType: 'module',   // Allows using import/export statements
@@ -12,6 +13,9 @@ module.exports = {
             version: 'detect'   // Automatically detect the react version
         }
     },
+    plugins: [
+        'simple-import-sort'
+    ],
     env: {
         browser: true,          // Enables browser globals like window and document
         amd: true,              // Enables require() and define() as global variables as per the amd spec.
@@ -19,6 +23,8 @@ module.exports = {
     },
     extends: [
         'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
         'plugin:jsx-a11y/recommended',
         'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
