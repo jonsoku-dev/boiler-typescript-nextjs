@@ -1,25 +1,22 @@
 module.exports = {
-    root: true,                 // Make sure eslint picks up the config at the root of the directory,
+    root: true,
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaVersion: 2020,      // Use the latest ecmascript standard
-        sourceType: 'module',   // Allows using import/export statements
+        ecmaVersion: 12,
+        sourceType: 'module',
         ecmaFeatures: {
-            jsx: true           // Enable JSX since we're using React
+            jsx: true
         }
     },
     settings: {
         react: {
-            version: 'detect'   // Automatically detect the react version
+            version: 'detect'
         }
     },
-    plugins: [
-        'simple-import-sort'
-    ],
     env: {
-        browser: true,          // Enables browser globals like window and document
-        amd: true,              // Enables require() and define() as global variables as per the amd spec.
-        node: true              // Enables Node.js global variables and Node.js scoping.
+        browser: true,
+        es2021: true,
+        node: true
     },
     extends: [
         'eslint:recommended',
@@ -27,11 +24,24 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
         'plugin:jsx-a11y/recommended',
-        'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
+        'plugin:prettier/recommended'
     ],
+    plugins: ['simple-import-sort', '@typescript-eslint', 'prettier'],
     rules: {
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+        'prettier/prettier': [
+            'error',
+            {},
+            {
+                usePrettierrc: true
+            }
+        ],
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        '@typescript-eslint/no-unused-vars': 'error',
+        '@typescript-eslint/no-empty-interface': 'off',
         'react/react-in-jsx-scope': 'off',
+        'react/prop-types': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
         'jsx-a11y/anchor-is-valid': [
             'error',
             {
@@ -41,4 +51,4 @@ module.exports = {
             }
         ]
     }
-};
+}
